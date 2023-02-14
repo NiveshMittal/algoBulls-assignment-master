@@ -40,7 +40,7 @@ const Main = ({ todoList, setTodoList }) => {
 		{
 			title: 'Title',
 			dataIndex: 'title',
-			render: (_) => <div className='font-semibold'>{_}</div>,
+			render: (_) => <div className='font-semibold' >{_}</div>,
 			sorter: (a, b) => a.title.localeCompare(b.title),
 		},
 
@@ -56,11 +56,11 @@ const Main = ({ todoList, setTodoList }) => {
 			sorter: (a, b) => new Date(b.due_date) - new Date(a.due_date),
 			render: (due_date) =>
 				due_date ? (
-					<div className='tag flex items-center bg-black rounded-md text-white p-2 py-1 cursor-default w-max'>
+					<div className='tag flex items-center bg-cyan-500 rounded-md text-white p-2 py-1 cursor-default w-max'>
 						{due_date}
 					</div>
 				) : (
-					<div className='tag flex items-center bg-black/10 rounded-md text-black p-2 py-1 cursor-default w-max'>
+					<div className='tag flex items-center bg-cyan-500/10 rounded-md text-black p-2 py-1 cursor-default w-max'>
 						--
 					</div>
 				),
@@ -75,12 +75,12 @@ const Main = ({ todoList, setTodoList }) => {
 							data.map((tag, index) => (
 								<li
 									key={index}
-									className='tag flex items-center bg-black rounded-md text-white p-2 py-1 cursor-default'>
+									className='tag flex items-center bg-cyan-500 rounded-md text-white p-2 py-1 cursor-default'>
 									<span className='tag-title capitalize'>{tag}</span>
 								</li>
 							))
 						) : (
-							<li className='tag flex items-center bg-black/10 rounded-md text-black p-2 py-1 cursor-default'>
+							<li className='tag flex items-center bg-cyan-500/10 rounded-md text-black p-2 py-1 cursor-default'>
 								<span className='tag-title capitalize'>No Tags</span>
 							</li>
 						)}
@@ -112,7 +112,7 @@ const Main = ({ todoList, setTodoList }) => {
 						<div
 							title='Delete'
 							onClick={() => deleteTodo(key)}
-							className='cursor-pointer border w-max p-2 bg-black/10 hover:bg-black/30 rounded-full'>
+							className='cursor-pointer border w-max p-2 bg-cyan-500/10 hover:bg-black/30 rounded-full'>
 							<MdDelete size={15} />
 						</div>
 						<div
@@ -120,7 +120,7 @@ const Main = ({ todoList, setTodoList }) => {
 							onClick={() => {
 								updateFunction(key)
 							}}
-							className='cursor-pointer border w-max p-2 bg-black/10 hover:bg-black/30 rounded-full'>
+							className='cursor-pointer border w-max p-2 bg-cyan-500/10 hover:bg-cyan/300 rounded-full'>
 							<MdEdit size={15} />
 						</div>
 					</div>
